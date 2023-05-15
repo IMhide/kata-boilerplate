@@ -11,10 +11,11 @@ Bundler.require(:default)
 # Require all the module you're creating here
 #
 
-require_relative "./lib/mod"
+loader = Zeitwerk::Loader.new
+loader.push_dir('./lib')
+loader.setup
 
 #
 # v  Write your main loop downhere v
 #
-
-#...
+Mod.foo
